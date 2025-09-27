@@ -2,142 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday My Love</title>
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    /* General page layout */
+    body, html {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: #fdf6f0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdfdfd;
       color: #333;
     }
+
     .page {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px;
-      text-align: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
     }
+
     h1 {
-      font-size: 2.5em;
-      color: #c97c5d;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
+
     p {
-      font-size: 1.2em;
+      font-size: 1rem;
       max-width: 700px;
       line-height: 1.6;
+      text-align: center;
     }
+
     .divider {
       width: 60px;
       height: 3px;
       background: #c97c5d;
-      margin: 30px 0;
+      margin: 14px auto 20px;
       border-radius: 2px;
     }
-    a.button {
+
+    .button {
       display: inline-block;
       margin-top: 20px;
-      padding: 12px 24px;
+      padding: 12px 20px;
       background: #c97c5d;
       color: #fff;
       text-decoration: none;
       border-radius: 8px;
       transition: background 0.3s;
     }
-    a.button:hover {
-      background: #a85f44;
+
+    .button:hover {
+      background: #a65d40;
+    }
+
+    /* Scrapbook page override */
+    .scrapbook-page {
+      display: block; /* override flex from .page */
+      padding: 48px 20px;
+      background: #fff;
+      color: #333;
+    }
+
+    .scrapbook-page h1 { font-size: 2rem; margin: 0 0 12px; }
+    .scrapbook-page .divider { width: 60px; height: 3px; background: #c97c5d; margin: 14px auto 20px; border-radius: 2px; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 960px;
+      margin: 18px auto;
+      align-items: stretch;
+    }
+
+    .photo-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f8f8f8;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-item figcaption {
+      padding: 8px 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      background: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-item img { height: 200px; }
+    }
+    @media (max-width: 600px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-item img { height: 260px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Page 1 -->
-  <section class="page" style="background:#fdf6f0;">
-    <h1>Happy Birthday, My Love 🎂</h1>
+  <!-- Intro Page -->
+  <section id="intro" class="page">
+    <h1>Happy Birthday ❤️</h1>
     <div class="divider"></div>
     <p>
-      The day we met, I had no idea you’d become the most beautiful part of my story.  
-      No distance can measure how close you are to my heart.  
-      Today is your day, and I just want to say: thank you for being you. 🤍
+      I wanted to make you something special…  
+      A little space filled with words, pictures, and songs that remind me of you.
     </p>
-    <a href="#scrapbook" class="button">Turn the Page ➡️</a>
+    <a href="#paragraph" class="button">Open 🎁</a>
   </section>
 
-  <!-- Page 2: Scrapbook -->
-  <section id="scrapbook" class="page" style="background:#fff;">
-  <h1>Our Scrapbook 📸</h1>
-  <div class="divider"></div>
-  <p>
-    Here are some of my favorite pictures, moments, and little pieces of u…
-  </p>
+  <!-- Paragraph Page -->
+  <section id="paragraph" class="page" style="background:#faf3f0;">
+    <h1>How We Met 🌸</h1>
+    <div class="divider"></div>
+    <p>
+      I still remember the very first time we talked.  
+      That little spark, that small smile, and how it slowly turned into something beautiful…  
+      Every moment since then has been something I treasure.
+    </p>
+    <a href="#scrapbook" class="button">Next ➡️</a>
+  </section>
 
-  <!-- Photo grid -->
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    max-width: 900px;
-    margin: 20px auto;
-  ">
-    <img src="photo1.jpg" alt="Memory 1" style="width:100%; border-radius:12px;">
-    <img src="photo2.jpg" alt="Memory 2" style="width:100%; border-radius:12px;">
-    <img src="photo3.jpg" alt="Memory 3" style="width:100%; border-radius:12px;">
-    <img src="photo4.jpg" alt="Memory 4" style="width:100%; border-radius:12px;">
-    <img src="photo5.jpg" alt="Memory 5" style="width:100%; border-radius:12px;">
-    <img src="photo6.jpg" alt="Memory 6" style="width:100%; border-radius:12px;">
-    <img src="photo7.jpg" alt="Memory 7" style="width:100%; border-radius:12px;">
-  </div>
+  <!-- Scrapbook Page -->
+  <section id="scrapbook" class="page scrapbook-page">
+    <h1>Our Scrapbook 📸</h1>
+    <div class="divider"></div>
+    <p>Here are some of my favorite memories — little pieces of us.</p>
 
-  <a href="#playlist" class="button">Next ➡️</a>
-</section>
+    <div class="photo-grid">
+      <figure class="photo-item"><img src="photo1.jpg" alt="Memory 1"><figcaption>Caption 1</figcaption></figure>
+      <figure class="photo-item"><img src="photo2.jpg" alt="Memory 2"><figcaption>Caption 2</figcaption></figure>
+      <figure class="photo-item"><img src="photo3.jpg" alt="Memory 3"><figcaption>Caption 3</figcaption></figure>
+      <figure class="photo-item"><img src="photo4.jpg" alt="Memory 4"><figcaption>Caption 4</figcaption></figure>
+      <figure class="photo-item"><img src="photo5.jpg" alt="Memory 5"><figcaption>Caption 5</figcaption></figure>
+      <figure class="photo-item"><img src="photo6.jpg" alt="Memory 6"><figcaption>Caption 6</figcaption></figure>
+      <figure class="photo-item"><img src="photo7.jpg" alt="Memory 7"><figcaption>Caption 7</figcaption></figure>
+    </div>
 
+    <a href="#playlist" class="button">Next ➡️</a>
+  </section>
 
-  <!-- Page 3: Playlist -->
-  <section id="playlist" class="page" style="background:#fdf6f0;">
+  <!-- Playlist Page -->
+  <section id="playlist" class="page" style="background:#f0f7fa;">
     <h1>Our Playlist 🎶</h1>
     <div class="divider"></div>
     <p>
-      These songs remind me of you, of us, and of all the moments I dream about.  
-      <br><br>
-      <a href="YOUR_PLAYLIST_LINK" target="_blank" class="button">🎧 Listen Here</a>
+      I put together a playlist just for you — songs that make me think of us,  
+      and the little moments we’ve shared.
     </p>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/YOUR_PLAYLIST_ID" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     <a href="#poem" class="button">Next ➡️</a>
   </section>
 
-  <!-- Page 4: Poem -->
-  <section id="poem" class="page" style="background:#fff;">
-    <h1>A Poem for You ✍️</h1>
+  <!-- Poem Page -->
+  <section id="poem" class="page" style="background:#f9f6f0;">
+    <h1>A Poem for You ✨</h1>
     <div class="divider"></div>
     <p>
-      Happy Birthday to the one I adore,<br>
-      Each day with you, I cherish more.<br>
-      Though distance keeps us far apart,<br>
-      You live right here, inside my heart.<br><br>
-      No gift could ever outshine you,<br>
-      So today I’ll send my love so true.<br>
-      With every word, a hug, a kiss—<br>
-      You are my greatest birthday wish. 🤍
+      In the quiet of the night,<br>
+      Your voice is my favorite song.<br>
+      Even across the miles,<br>
+      My heart feels you close, all along.
     </p>
-    <a href="#card" class="button">Final Page ➡️</a>
-  </section>
-
-  <!-- Page 5: Final Card -->
-  <section id="card" class="page" style="background:#fdf6f0;">
-    <h1>💌 My Birthday Card for You 💌</h1>
-    <div class="divider"></div>
-    <p>
-      1️⃣ A thousand hugs (open whenever you miss me).<br>
-      2️⃣ A playlist of my heartbeat that only you can hear.<br>
-      3️⃣ A promise: no matter the distance, you’ll never spend a birthday without feeling loved.  
-      <br><br>
-      Thank you for being my favorite part of life.  
-      I love you more than words can hold. 🤍
-    </p>
+    <a href="#intro" class="button">Back to Start 🔄</a>
   </section>
 
 </body>
 </html>
-
-
-
