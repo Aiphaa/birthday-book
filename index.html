@@ -66,11 +66,23 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    iframe {
-      width: 100%;
-      height: 400px;
-      border-radius: 8px;
-      border: none;
+    .spotify-embed {
+      margin: 2rem auto;
+      max-width: 500px;
+    }
+    .spotify-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #1DB954;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .spotify-button:hover {
+      background: #159c42;
     }
   </style>
 </head>
@@ -81,7 +93,7 @@
       <h1>Happy Birthday Amor ❤️</h1>
       <p>
         Ayayay, i have never even dared to imagine that one day I will write something about someone but here I am doing it proudly and insanely happy about it.
-        It all started in November the 10th, I sent a friend request to a Raze player who was helping me defending my site, I didn’t know that this girl will be the love of my life and the most person I will ever care about...
+        It all started in November the 10th, I sent a friend request to a Raze player who was helping me defending my site, I didn’t know that this girl will be the love of my life and the most person I will ever care about. From the first DM I felt that we would be great friends, you weren’t trying to seek attention nor be “a pick me“ like most of the discord/gamer girls are these days, you were being yourself and talking to me like we know each other for a long time, and somehow, I found myself doing the same after I saw the Ismail in you...
       </p>
     </div>
 
@@ -103,7 +115,22 @@
     <div class="page">
       <h1>Our Playlist</h1>
       <p>These songs remind me of us 💕</p>
-      <iframe src="https://open.spotify.com/embed/playlist/your-playlist-id" allowtransparency="true" allow="encrypted-media"></iframe>
+      <div class="spotify-embed">
+        <iframe 
+          style="border-radius:12px" 
+          src="https://open.spotify.com/embed/playlist/0qOdmB7CG3wCKENLRBZ30Z?utm_source=generator" 
+          width="100%" 
+          height="352" 
+          frameBorder="0" 
+          allowfullscreen="" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy">
+        </iframe>
+        <br>
+        <a href="https://open.spotify.com/playlist/0qOdmB7CG3wCKENLRBZ30Z" target="_blank" class="spotify-button">
+          🎵 Open on Spotify
+        </a>
+      </div>
     </div>
 
     <div class="navigation">
