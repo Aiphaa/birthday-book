@@ -195,25 +195,68 @@
     <a href="#playlist" class="button">Next ➡️</a>
   </section>
 
-  <!-- Playlist Page -->
-  <section id="playlist" class="page" style="background:#f0f7fa;">
-    <h1>Our Playlist 🎶</h1>
-    <div class="divider"></div>
-    <p>
-      I put together a playlist just for you — songs that make me think of us,  
-      and the little moments we’ve shared.
-    </p>
-    <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/playlist/0qOdmB7CG3wCKENLRBZ30Z" 
-            width="300" height="380" frameborder="0" 
-            allowtransparency="true" 
-            allow="encrypted-media">
-    </iframe>
-    <a href="#intro" class="button">Back to Start 🔄</a>
-  </section>
+  <!-- Playlist Page (responsive embed + auto-fallback) -->
+<section id="playlist" class="page" style="background:#f0f7fa;">
+  <h1>Our Playlist 🎶</h1>
+  <div class="divider"></div>
+  <p>
+    I put together a playlist just for you — songs that make me think of us,  
+    and the little moments we’ve shared.
+  </p>
+
+  <div id="spotify-wrapper" style="max-width:960px; margin:20px auto; padding:0 16px; box-sizing:border-box; text-align:center;">
+    <!-- iframe container -->
+    <div id="iframe-container" style="display:block; margin:0 auto;">
+      <iframe id="spotify-iframe"
+        style="border-radius:12px; width:100%; height:380px; display:block; max-width:700px; margin:0 auto;"
+        src="https://open.spotify.com/embed/playlist/0qOdmB7CG3wCKENLRBZ30Z"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- fallback shown when iframe doesn't load -->
+    <div id="spotify-fallback" style="display:none; margin-top:12px;">
+      <div style="margin-bottom:12px; font-size:1rem; color:#666;">
+        The embedded player couldn't load here — no worries, open it directly on Spotify:
+      </div>
+      <a href="https://open.spotify.com/playlist/0qOdmB7CG3wCKENLRBZ30Z" target="_blank"
+         style="display:inline-block; background:#1DB954; color:#fff; padding:12px 18px; border-radius:28px; text-decoration:none; font-weight:700;">
+        🎵 Open Playlist on Spotify
+      </a>
+      <div style="margin-top:10px; font-size:0.85rem; color:#999;">
+        Tip: try disabling adblocker or opening the page in another browser/device if it still doesn't show.
+      </div>
+    </div>
+  </div>
+
+  <a href="#intro" class="button">Back to Start 🔄</a>
+</section>
+
+<script>
+  (function() {
+    const iframe = document.getElementById('spotify-iframe');
+    const fallback = document.getElementById('spotify-fallback');
+    const container = document.getElementById('iframe-container');
+    let loaded = false;
+
+    // If iframe loads, keep it visible
+    iframe.addEventListener('load', () => { loaded = true; });
+
+    // After 3000ms, if not loaded -> show fallback
+    setTimeout(() => {
+      if (!loaded) {
+        container.style.display = 'none';
+        fallback.style.display = 'block';
+      }
+    }, 3000);
+  })();
+</script>
 
 </body>
 </html>
+
 
 
 
