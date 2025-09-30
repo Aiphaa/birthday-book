@@ -59,16 +59,37 @@
       background: #a65d40;
     }
 
-    /* Scrapbook page override */
-    .scrapbook-page {
-      display: block; /* override flex from .page */
-      padding: 48px 20px;
-      background: #fff;
-      color: #333;
-    }
+    /* Scrapbook page layout fix */
+.scrapbook-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 20px;
+  background: #fff;
+  color: #333;
+  text-align: center; /* centers text */
+}
 
-    .scrapbook-page h1 { font-size: 2rem; margin: 0 0 12px; }
-    .scrapbook-page .divider { width: 60px; height: 3px; background: #c97c5d; margin: 14px auto 20px; border-radius: 2px; }
+.scrapbook-page h1 { 
+  font-size: 2rem; 
+  margin: 0 0 12px; 
+}
+
+.scrapbook-page .divider { 
+  width: 60px; 
+  height: 3px; 
+  background: #c97c5d; 
+  margin: 14px auto 20px; 
+  border-radius: 2px; 
+}
+
+.scrapbook-page p {
+  max-width: 700px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
 
     .photo-grid {
       display: grid;
@@ -256,6 +277,7 @@
 
 </body>
 </html>
+
 
 
 
